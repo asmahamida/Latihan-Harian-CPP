@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Gaya desain tetap sama seperti sebelumnya agar cantik di Notion */
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background: #f4f7f6; }
+        .card { background: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 5px; margin-bottom: 15px; }
+        .stars input { display: none; }
+        .stars label { font-size: 25px; color: #ddd; cursor: pointer; }
+        .stars input:checked ~ label { color: #f1c40f; }
+        textarea { width: 100%; margin-top: 10px; border-radius: 8px; border: 1px solid #ddd; padding: 10px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #2d3436; color: white; border: none; border-radius: 8px; margin-top: 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>🌙 Evaluasi Harian</h3>
+        <p>1. Hudhurul Qalb</p>
+        <div class="stars" id="stars1">
+            <input type="radio" name="q1" value="5" id="q1-5"><label for="q1-5">★</label>
+            <input type="radio" name="q1" value="4" id="q1-4"><label for="q1-4">★</label>
+            <input type="radio" name="q1" value="3" id="q1-3"><label for="q1-3">★</label>
+            <input type="radio" name="q1" value="2" id="q1-2"><label for="q1-2">★</label>
+            <input type="radio" name="q1" value="1" id="q1-1"><label for="q1-1">★</label>
+        </div>
+
+        <p>2. Tafahhum</p>
+        <div class="stars" id="stars2">
+            <input type="radio" name="q2" value="5" id="q2-5"><label for="q2-5">★</label>
+            <input type="radio" name="q2" value="4" id="q2-4"><label for="q2-4">★</label>
+            <input type="radio" name="q2" value="3" id="q2-3"><label for="q2-3">★</label>
+            <input type="radio" name="q2" value="2" id="q2-2"><label for="q2-2">★</label>
+            <input type="radio" name="q2" value="1" id="q2-1"><label for="q2-1">★</label>
+        </div>
+
+        <p>Ayat Emas:</p>
+        <textarea id="reflection" rows="3"></textarea>
+        
+        <button onclick="sendData()">Simpan ke Database</button>
+    </div>
+
+    <script>
+        function sendData() {
+            const url = "https://script.google.com/macros/s/AKfycbwpTQo61TsDfXsLKMIfWrNz6g2Nu_jGxj35hYI5qCqQppj5b-9m_D1nNigC7fk3lQcI/exec"; // GANTI DENGAN LINK GOOGLE SCRIPT ANDA
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value || 0;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value || 0;
+            const reflection = document.getElementById('reflection').value;
+
+            fetch(url, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify({ q1, q2, q3: 0, reflection })
+            }).then(() => {
+                alert("Data Terkirim! Cek Google Sheets Anda.");
+            });
+        }
+    </script>
+</body>
+</html>
