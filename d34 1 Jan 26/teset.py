@@ -35,3 +35,4 @@ print(txt) #The price is 59.000 dollars
 #txt = "We are the so-called "Vikings" from the north."    #bakal errorr!
 txt = "We are the so-called \"Vikings\" from the north."
 print(txt)
+

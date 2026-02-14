@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Evaluasi Al-Qur'an - Asrar al-Muhibbin</title>
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #e1b12c;
+            --bg-color: #ffffff;
+            --text-color: #2d3436;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background: #f4f7f6; 
+            display: flex; 
+            justify-content: center; 
+            padding: 20px;
+            margin: 0;
+        }
+        .container { 
+            background: var(--bg-color); 
+            width: 100%; 
+            max-width: 450px; 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        h2 { text-align: center; margin-bottom: 5px; color: var(--primary-color); font-size: 1.4rem; }
+        .quote { text-align: center; font-style: italic; font-size: 0.85rem; color: #636e72; margin-bottom: 25px; display: block; }
+        
+        .eval-section { margin-bottom: 20px; }
+        .label { font-weight: 600; font-size: 0.95rem; display: block; margin-bottom: 8px; color: var(--primary-color); }
+        
+        /* Star Rating Style */
+        .stars { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 8px; }
+        .stars input { display: none; }
+        .stars label { font-size: 30px; color: #dfe6e9; cursor: pointer; transition: color 0.2s; }
+        .stars input:checked ~ label { color: var(--accent-color); }
+        .stars label:hover, .stars label:hover ~ label { color: #f1c40f; }
+
+        .reflection-area { margin-top: 25px; }
+        textarea { 
+            width: 100%; 
+            border: 1px solid #dfe6e9; 
+            border-radius: 12px; 
+            padding: 12px; 
+            box-sizing: border-box; 
+            font-family: inherit; 
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 80px;
+            background: #f9f9f9;
+        }
+        textarea:focus { outline: none; border-color: var(--accent-color); background: #fff; }
+
+        .btn-save { 
+            width: 100%; 
+            background: var(--primary-color); 
+            color: white; 
+            border: none; 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: transform 0.2s;
+        }
+        .btn-save:active { transform: scale(0.98); }
+
+        /* Footer */
+        .footer { text-align: center; font-size: 0.75rem; color: #b2bec3; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Muhasabah Tilawah</h2>
+    <span class="quote">"Ketaqwaan adalah sebuah perjalanan, bukan tujuan."</span>
+
+    <div class="eval-section">
+        <span class="label">1. Hudhurul Qalb (Kehadiran Hati)</span>
+        <div class="stars">
+            <input type="radio" name="q1" id="q1-5"><label for="q1-5">★</label>
+            <input type="radio" name="q1" id="q1-4"><label for="q1-4">★</label>
+            <input type="radio" name="q1" id="q1-3"><label for="q1-3">★</label>
+            <input type="radio" name="q1" id="q1-2"><label for="q1-2">★</label>
+            <input type="radio" name="q1" id="q1-1"><label for="q1-1">★</label>
+        </div>
+    </div>
+
+    <div class="eval-section">
+        <span class="label">2. Tafahhum (Perenungan Makna)</span>
+        <div class="stars">
+            <input type="radio" name="q2" id="q2-5"><label for="q2-5">★</label>
+            <input type="radio" name="q2" id="q2-4"><label for="q2-4">★</label>
+            <input type="radio" name="q2" id="q2-3"><label for="q2-3">★</label>
+            <input type="radio" name="q2" id="q2-2"><label for="q2-2">★</label>
+            <input type="radio" name="q2" id="q2-1"><label for="q2-1">★</label>
+        </div>
+    </div>
+
+    <div class="eval-section">
+        <span class="label">3. Ta’adzum (Rasa Mengagungkan)</span>
+        <div class="stars">
+            <input type="radio" name="q3" id="q3-5"><label for="q3-5">★</label>
+            <input type="radio" name="q3" id="q3-4"><label for="q3-4">★</label>
+            <input type="radio" name="q3" id="q3-3"><label for="q3-3">★</label>
+            <input type="radio" name="q3" id="q3-2"><label for="q3-2">★</label>
+            <input type="radio" name="q3" id="q3-1"><label for="q3-1">★</label>
+        </div>
+    </div>
+
+    <div class="reflection-area">
+        <span class="label">✨ Ayat Emas Hari Ini</span>
+        <textarea placeholder="Tulis satu ayat yang paling menyentuh batin Anda hari ini..."></textarea>
+    </div>
+
+    <button class="btn-save" onclick="alert('Alhamdulillah, catatan batin telah tersimpan dalam niat.')">Simpan Perjalanan</button>
+    
+    <div class="footer">Dashboard Kualitas Batin • Asrar al-Muhibbin</div>
+</div>
+
+</body>
+</html>

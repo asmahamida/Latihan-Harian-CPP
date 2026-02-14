@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Evaluasi Al-Qur'an</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f9f9f9; padding: 20px; color: #333; }
+        .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 500px; margin: auto; }
+        h2 { text-align: center; color: #2c3e50; font-size: 1.2rem; }
+        .subtitle { text-align: center; font-size: 0.8rem; color: #7f8c8d; margin-bottom: 20px; }
+        .eval-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .label { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+        .stars { display: flex; gap: 5px; cursor: pointer; }
+        .star { font-size: 24px; color: #ddd; transition: color 0.2s; }
+        .star.active { color: #f1c40f; }
+        textarea { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 10px; box-sizing: border-box; font-family: inherit; margin-top: 10px; }
+        button { width: 100%; background: #27ae60; color: white; border: none; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #219150; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🌙 Evaluasi Adab Bathiniyah</h2>
+    <p class="subtitle">Berdasarkan Inti Asrar al-Muhibbin</p>
+
+    <div class="eval-item">
+        <span class="label">1. Hudhurul Qalb (Kehadiran Hati)</span>
+        <div class="stars" onclick="setRating(event, 0)">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+    </div>
+
+    <div class="eval-item">
+        <span class="label">2. Tafahhum (Memahami Makna)</span>
+        <div class="stars" onclick="setRating(event, 1)">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+    </div>
+
+    <div class="eval-item">
+        <span class="label">3. Ta'adzum (Rasa Mengagungkan)</span>
+        <div class="stars" onclick="setRating(event, 2)">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+    </div>
+
+    <div class="eval-item">
+        <span class="label">✨ Ayat Emas Hari Ini:</span>
+        <textarea rows="3" placeholder="Tuliskan satu ayat yang paling menyentuh batin Anda..."></textarea>
+    </div>
+
+    <button onclick="alert('Masya Allah! Teruslah istiqomah dalam perjalanan cinta ini.')">Simpan Refleksi</button>
+</div>
+
+<script>
+    function setRating(ev, rowIndex) {
+        if (ev.target.classList.contains('star')) {
+            const stars = ev.currentTarget.querySelectorAll('.star');
+            const index = Array.from(stars).indexOf(ev.target);
+            stars.forEach((s, i) => {
+                s.classList.toggle('active', i <= index);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

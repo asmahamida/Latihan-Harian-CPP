@@ -17,4 +17,3 @@ print(thisset)
 #remove item
 # remove() or discard()
 
-#JOIN SETS

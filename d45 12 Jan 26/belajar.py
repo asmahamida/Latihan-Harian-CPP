@@ -11,6 +11,7 @@ my_function("emil")
 
 #*args and **kwargs -> allow func to accept a unknown number of arguments
 #args bisa bikin fungsi dengan parameter tdk ditentukan jumlahnya. args buat tuple
+#*args = argumen tanpa jumlah tetap
 
 def func(*args):
   print("type:", type(args))
